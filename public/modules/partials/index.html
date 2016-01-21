@@ -2,115 +2,169 @@
     <div class="backimg">
         <div class="container pannel">
             <div>
-                <h1>TWITTER SEARCH</h1>
-                <a class="btn linked" ng-click="scrollTo('application-form')">#SEARCH</a>
+                <h1>BOOSTERFUELS</h1>
+                <a class="btn linked" ng-click="scrollTo('application-form')">SIGN IN</a>
             </div>
         </div>
     </div>
 </div>
-<div class="dynamicTabs">
+<div class="container">
+    <div ng-show="visible.first">
+        <a href="#" id="application-form"></a>
+        <form class="form-horizontal" id="commentForm" name="step1">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 form-container">
+                <h2 style="text-align: center; margin-top: 0; margin-bottom: 25px;">Personal Info (1/3)</h2>
+                <div class="form-group">
 
-    <a href="#" id="application-form"></a>
-    <form flex-gt-md class="form-design">
-        <div layout="vertical" layout-sm="horizontal" layout-padding layout-align="left center">
-            <md-input-container>
-                <label>Tab Name</label>
-                <input ng-model="tTitle">
-                <div class="hint">Name displayed for this search</div>
-            </md-input-container>
-            <md-input-container>
-                <label>Search (#awesome)</label>
-                <input ng-model="tContent">
-                <div class="hint">Search term for twitter</div>
-            </md-input-container>
-            <md-button class="md-primary" type="submit" style="max-height: 40px; margin-top:20px;" ng-disabled="!tContent || !tTitle" aria-label="Add New Search">Add New Search</md-button>
-        </div>
-    </form>
+                    <md-input-container>
+                        <label>First Name</label>
+                        <input ng-model="user.firstName" name="firstName" ng-required="true">
+                    </md-input-container>
+                    <p ng-show="step1.firstName.$invalid && !step1.firstName.$pristine" class="error">First name is required.</p>
 
-    <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom class="tab-color">
-        <md-tab ng-repeat="tab in tabs" md-on-select="onTabSelected(tab)" label="{{tab.title}}">
-            <md-content class="content-background">
-                <div layout="column" layout-fill layout-align="center center">
-                    <div layout="row">
-                        <h1>{{tab.q}} ({{tab.totalItems}})</h1>
-                    </div>
-                    <div layout-gt-sm="row" style="width: 100%">
-                        <div flex="20">
-                            <div layout="row">
-                                <md-button aria-label="Remove" class="remove-tab md-warn md-icon-button" ng-disabled="tabs.length == 1" ng-click="removeTab( tab )">
-                                    <md-icon md-font-icon="icon-trash"></md-icon>
-                                </md-button>
-                            </div>
-                        </div>
-                        <div flex="60"></div>
-                        <div layout="row" flex="20">
-                            <h4 class="md-body-2 change"><b>LIVE FEED</b></h4>
-                            <md-switch ng-model="tab.liveFeed" ng-change="goLive(tab.q, tab)" class="live-color md-warn" aria-label="Live feed"></md-switch>
-                        </div>
-                    </div>
+                </div>
+                <div class="form-group">
 
-                    <div flex class="tab-text">
-                        <md-card ng-repeat="t in tweets.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) track by $index">
-                            <div class="row">
-                                <div class="col-xs-2">
-                                    <div>
-                                        <img ng-src="{{t.user.profile_image_url}}" class="md-card-image image-design">
-                                    </div>
-                                </div>
-                                <div class="col-xs-8">
-                                    <div class="row">
-                                        <div class="col-xs-8">
-                                            <h2>{{t.user.screen_name}}</h2>
-                                        </div>
-                                        <div class="col-xs-4">
+                    <md-input-container>
+                        <label>Last Name</label>
+                        <input ng-model="user.lastName" name="lastName" ng-required="true">
+                    </md-input-container>
+                    <p ng-show="step1.lastName.$invalid && !step1.lastName.$pristine" class="error">Last name is required.</p>
 
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div>
-                                            <p class="md-body-2 gray">{{t.user.description}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="form-group">
 
-                            <p layout-padding>
-                                <span ng-bind-html="highlight(t.text, tab.q)" class="md-body-2 darken">{{t.text}}</span>
+                    <md-input-container>
+                        <label>Email</label>
+                        <input ng-model="user.email" name="email" type="email" ng-required="true">
+                    </md-input-container>
+                    <p ng-show="step1.email.$invalid && !step1.email.$pristine" class="error">Email format is invalid.</p>
+
+                </div>
+                <div class="form-group" style="text-align: center;" ng-show="!step1.$invalid && buttons.first">
+
+                    <a style="margin-left: 5%;" class="btn sharpend" ng-click="nextStep(1)">Next Step</a>
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </form>
+    </div>
+</div>
+<div class="container"  ng-show="visible.second">
+    <div id="step2">
+        <a href="#" id="application-form-step2"></a>
+        <form class="form-horizontal" id="commentForm2" name="step2" action="">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 form-container">
+                <h2 style="text-align: center; margin-top: 0; margin-bottom: 25px;">Car Info (2/3)</h2>
+                <div class="form-group">
+
+                    <md-input-container>
+                        <label>Car Make</label>
+                        <md-select ng-model="user.carMake">
+                            <md-option ng-repeat="car in car.make" value="{{car.name}}">
+                                {{car.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                </div>
+                <div class="form-group" ng-show="user.carMake">
+
+                    <md-input-container>
+                        <label>Car Model</label>
+                        <md-select ng-model="user.userModel">
+                            <md-option ng-repeat="carr in car.model[user.carMake]" value="{{carr.name}}">
+                                {{carr.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                </div>
+                <div class="form-group" style="padding-left: 20%; padding-right: 20%;">
+
+                    <p class="input-group">
+                        <input type="text" class="form-control" name="carDate" uib-datepicker-popup="{{format}}"  datepicker-mode="'year'" min-mode="'year'" ng-model="user.carDate" is-open="popup1.opened" ng-required="true" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+
+                    <p ng-show="(step2.carDate.$error.required && !step2.carDate.$pristine)" class="error">Date is required !</p>
+                    <p ng-show="(step2.carDate.$invalid && !step2.carDate.$pristine && !step2.carDate.$error.required)" class="error">Invalid date format !</p>
+
+                </div>
+                <div class="form-group" style="text-align: center;" ng-show="user.userModel && user.carMake && user.carDate && !step2.$invalid && buttons.second">
+
+                    <a style="margin-left: 5%;" class="btn sharpend" ng-click="nextStep(2)">Last Step</a>
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </form>
+    </div>
+</div>
+<div class="container" ng-show="visible.third">
+    <div id="step3">
+        <a href="#" id="application-form-step3"></a>
+        <form class="form-horizontal" id="commentForm3" name="step3" action="">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 form-container">
+                <h2 style="text-align: center; margin-top: 0; margin-bottom: 25px;">Credit Card Info (3/3)</h2>
+                <div class="form-group">
+
+                    <md-input-container>
+                        <label>Card Number</label>
+                        <input ng-model="user.cardNumber" name="cardNumber" cc-number>
+                    </md-input-container>
+
+                    <p ng-show="step3.cardNumber.$invalid && !step3.cardNumber.$pristine" class="error">
+                        Looks like you're typing wrong card number!
+                    </p>
+
+                </div>
+                <div class="form-group row">
+
+                    <div cc-exp>
+                        <div class="col-md-6">
+                            <md-input-container>
+                                <label>Expiration Month</label>
+                                <input ng-model="user.exp_month" name="expMonth" cc-exp-month />
+                            </md-input-container>
+                            <p ng-show="step3.expMonth.$invalid && !step3.expMonth.$pristine" class="error">
+                                Expiration month is invalid!
                             </p>
-                            <div layout="row" layout-padding layout-align="center center">
-                                <div flex="50" class="xcenter">
-                                    <label class="xsmall">RETWEETS</label>
-                                    <p class="md-body-1 blue">{{t.retweeted_status.retweet_count ? t.retweeted_status.retweet_count : 0}}</p>
-                                </div>
-                                <div flex="50" class="xcenter">
-                                    <label class="xsmall">FAVORITES</label>
-                                    <p class="md-body-1 blue">{{t.retweeted_status.favorite_count ? t.retweeted_status.favorite_count : 0}}</p>
-                                </div>
-                            </div>
-                            <div layout="row" layout-align="center center" layout-padding>
-                                <div flex>
-                                    <div>
-                                            <p class="md-body-2">Created at : {{t.created_at}}</p>
-                                    </div>
-                                </div>
-                                <div flex="15">
-                                    <div>
-                                        <div layout="row" layout-align="center center">
-                                            <div flex>
-                                                <md-button style="background-color: #00ACEE;" aria-label="{{t.text}}" ng-href="http://twitter.com/{{t.user.screen_name}}/status/{{t.id_str}}" class="md-fab md-mini fab-color" target="_blank">
-                                                    <md-icon md-font-icon="icon-twitter4" class="icon-fab"></md-icon>
-                                                </md-button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </md-card>
-                        <uib-pagination ng-model="currentPage" items-per-page="itemsPerPage" total-items="tab.totalItems" class="pagination-sm"></uib-pagination>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container>
+                                <label>Expiration Year</label>
+                                <input ng-model="user.exp_year" name="expYear" cc-exp-year full-year/>
+                            </md-input-container>
+                            <p ng-show="step3.expYear.$invalid && !step3.expYear.$pristine" class="error">
+                                Expiration year is invalid!
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </md-content>
-        </md-tab>
-    </md-tabs>
+                <div class="form-group" style="text-align: center;" ng-show="!step3.$invalid">
 
+                    <a style="margin-left: 5%;" class="btn sharpend" id="gumb3" ng-click="login($event)">Login</a>
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </form>
+    </div>
+</div>
+
+<div class="footer1">
+    <div class="container copyright-allign">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Valentino Perovic 2015</p>
+            </div>
+        </div>
+    </div>
 </div>

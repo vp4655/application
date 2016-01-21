@@ -2,31 +2,11 @@
     font-family: trade-gothic-bold-condensed;
     src: url('../fonts/Trade-Gothic-LT-Bold-Condensed-No--20.ttf');
 }
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-body, html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-}
 
 body.login {
     background: #0288b1;
     font-family: calibri;
     font-size: 18px;
-}
-
-h1 {
-    text-align: center;
-}
-
-.backimg {
-    background: url("../images/bg.jpg");
-    background-size: cover;
-    height: 100%;
 }
 
 .btn.linked {
@@ -41,266 +21,129 @@ h1 {
 }
 
 .btn.linked:hover, .btn.linked:focus, .btn.linked:active, .btn.linked.active {
-    color: #1CBAA6;
+    color: #291A34;
     background-color: white;
-    border-color: #1CBAA6;
+    border-color: #291A34;
 }
 
 .btn.linked:active, .btn.linked.active {
-    border-color: #1CBAA6;
+    border-color: #291A34;
     background-color: white;
-    color: #1CBAA6;
+    color: #291A34;
     box-shadow: none;
 }
+.btn.linkedReverse {
+    border-radius: 0;
+    background: none;
+    padding: 12px 22px;
+    border: 2px solid #291A34;
+    color: #291A34;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
 
+.btn.linkedReverse:hover, .btn.linkedReverse:focus, .btn.linkedReverse:active, .btn.linkedReverse.active {
+    color: white;
+    background-color: #291A34;
+    border-color: white;
+}
+
+.btn.linkedReverse:active, .btn.linkedReverse.active {
+    border-color: white;
+    background-color: #291A34;
+    color: white;
+    box-shadow: none;
+}
 .content {
     height: 100%;
 }
-
+#commentForm{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.form-container{
+    padding: 40px 40px 40px 40px;
+}
 .content-background {
     background: rgb(230, 239, 243);
 }
-
-.dynamicTabs {
-    padding-top: 10px;
+.btn.sharpend{
+    border-radius: 0;
+    background: none;
+    padding: 12px 22px;
+    border: 2px solid #291A34;
+    color: #291A34;
+    font-family: Verdana,Arial,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }
-
-.dynamicTabs md-tabs .md-view {
-    background: #EEE;
+.btn.sharpend:hover, .btn.sharpend:focus, .btn.sharpend:active, .btn.sharpend.active {
+    color: white;
+    background-color: #291A34;
+    border-color: white;
 }
-
-.dynamicTabs .tab-text {
-    margin-bottom: 32px;
+.btn.sharpend:active, .btn.sharpend.active {
+    border-color: white;
+    background-color: #291A34;
+    color: white;
+    box-shadow: none;
 }
-
-.dynamicTabs .md-button {
-    display: block;
+.footer1{
+    background-color: #291A34;
+    height: 10%;
+    text-align: center;
+    margin-top: 40px;
+    color: white;
 }
-
-.dynamicTabs .tab1 {
-    background-color: #abd6e4;
-    min-height: 300px;
+.copyright-allign{
+    position: relative;
+    top: 40%;
 }
-
-.dynamicTabs .tab2 {
-    background-color: #94caa6;
-    min-height: 300px;
-}
-
-.dynamicTabs .tab3 {
-    background-color: #c4b5a2;
-    min-height: 300px;
-}
-
-.dynamicTabs .tab4 {
-    background-color: #e3cde8;
-    min-height: 300px;
-}
-
-.dynamicTabs .title {
-    padding-top: 8px;
-    padding-right: 8px;
-    text-align: left;
-    text-transform: uppercase;
-    color: #888;
-    margin-top: 24px;
-}
-
-.dynamicTabs [layout-align] > * {
-    margin-left: 8px;
-}
-
-.dynamicTabs form > [layout] > * {
-    margin-left: 8px;
-}
-
-.dynamicTabs .long > input {
-    width: 264px;
-}
-
-.dynamicTabs .md-button {
-    max-height: 30px;
-}
-
-.dynamicTabs .md-button.add-tab {
-    margin-top: 20px;
-    max-height: 30px !important;
-}
-
-.dynamicTabs .md-button.remove-tab {
-    margin-top: 10px;
-    max-height: 30px !important;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: #C40017;
-    font-size: 24px;
-}
-
 .form-design {
     width: 700px;
     margin: 0 auto;
     margin-bottom: 30px;
 }
-
-.highlightedText {
-    color: #00ACEE;
+body, html{
+    height: 100%;
+    margin: 0;
 }
-
-.hint {
-    position: absolute;
-    left: 2px;
-    right: auto;
-    bottom: 7px;
-    font-size: 11px;
-    line-height: 14px;
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-    color: #c2c2c2;
+.modal-backdrop {
+    background-color: red;
 }
-
-.hint.ng-leave.ng-leave-active {
-    bottom: 26px;
-    opacity: 0;
+.error{
+    color: #EA6868;
 }
-
-.hint.ng-enter.ng-enter-active {
-    bottom: 7px;
-    opacity: 1;
+.wrapper{
+    height: 70%;
+    margin-bottom: 40px;
 }
-
-.login h1 {
-    margin-top: 10%;
-    color: white;
-    text-decoration: underline;
-}
-
-.login-wrapper {
-    display: block;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
-    margin: 36px;
-    padding: 18px;
-    text-align: center;
-    background: white;
-}
-
-.md-body-1.blue{
-    color: #3B94D9;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-.md-body-2.change {
-    line-height: 40px;
-}
-
-.md-body-2.darken{
-    font-weight: 600;
-}
-
-.md-body-2.gray{
-    color: #C7C7C7;
-}
-
-md-card {
-    background: #fff;
-    max-height: 300px;
-    width: 900px;
-}
-
-md-card .md-card-image {
-    width: 100px;
-}
-
-.md-card-image.image-design{
-    border: 2px solid transparent;
-    border-radius: 50px;
-    margin-left: 10%;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-md-icon.icon-fab {
-    font-size: 2rem;
-    height: 2rem;
-    width: 2rem;
-    line-height: 1.4rem;
-}
-
-md-fab.fab-color {
-    background-color: #00ACEE;
-}
-
-.md-primary.md-button {
-    color: #00ACEE;
-    background-color: white;
-    border: 1px solid #00ACEE;
-    border-radius: 0;
-}
-
-md-switch.md-checked.live-color .md-bar {
-    background-color: rgba(18, 240, 32, 0.5);
-}
-
-md-switch.md-checked.live-color .md-thumb {
-    background-color: rgba(18, 240, 32, 0.87);
-}
-
-md-switch.md-checked.live-color .md-thumb.md-ink-ripple {
-    background-color: rgba(18, 240, 32, 0.5);
-    color: rgba(18, 240, 32, 0.5);
-}
-
-md-switch.md-checked.live-color .md-thumb.md-ink-ripple::before {
-    background-color: rgba(18, 240, 32, 0.5);
-    color: rgba(18, 240, 32, 0.5);
-}
-
-.md-warn.md-button {
-    color: #C40017;
-    background-color: white;
-    border: 1px solid #C40017;
-    border-radius: 0;
-}
-
-.md-warn.md-button:disabled {
-    border-color: rgba(0, 0, 0, 0.26);
-}
-
-.ng-scope {
+.backimg{
+    background: url("../images/bckg.png");
+    background-size: cover;
     height: 100%;
 }
-
-.pannel {
+.pannel{
     position: relative;
     top: 40%;
     text-align: center;
 }
-
-.pannel h1 {
-    font-family: trade-gothic-bold-condensed, Arial, sans-serif;
+.pannel h1{
+    font-family: trade-gothic-bold-condensed,Arial,sans-serif;
     font-weight: 300;
     font-size: 46px;
     color: white;
 }
-
-.tab-color {
-    background: rgba(4, 169, 243, 0.6);
+md-input-container:not(.md-input-invalid) .md-input {
+    border-color: #a8a8a8;
 }
-
-.tab-color md-ink-bar {
-    color: white;
-    background-color: white;
+md-input-container:not(.md-input-invalid) label{
+    color: #a8a8a8;
 }
-
-.wrapper {
-    height: 60%;
-    min-height: 300px;
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #291A34;
 }
-
-.xcenter{
-    text-align: center;
-}
-
-.xsmall{
-    font-size: 10px;
-    color: #3B94D9;
+md-input-container:not(.md-input-invalid).md-input-focused label{
+    color: #291A34;
 }

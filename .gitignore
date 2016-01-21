@@ -2,3 +2,4 @@
 .iml
 .git
 public/lib
+node_modules
