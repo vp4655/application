@@ -1,8 +1,8 @@
 # application
 
-Job application AngularJS app simulating login without backend jobs.
-
 [![License](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://img.shields.io/packagist/l/doctrine/orm.svg)
+
+Job application AngularJS app simulating login without backend jobs.
 
 ## Requirements
 - [node v-0.12.7](https://nodejs.org/download/release/v0.12.7/)
@@ -30,7 +30,7 @@ License
 ---------
 The MIT License (MIT)
 
-Copyright (c) 2016 Valentino Peroviæ
+Copyright (c) 2016 Valentino PeroviÃ¦
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
